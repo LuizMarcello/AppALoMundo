@@ -10,7 +10,7 @@ namespace AppAloMundo
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new Pagina2();
         }
 
         protected override void OnStart()
