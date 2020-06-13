@@ -8,13 +8,19 @@
              Title="Macoratti.net"
              BackgroundColor="White">
 
-    <StackLayout>
-        <Label Text="Xamarin Forms XAML" x:Name="label" HorizontalOptions="Center"
-            VerticalOptions="Center"/>
-        
-        <Slider ValueChanged="Slider_ValueChanged" x:Name="slider"/>
+    <StackLayout Orientation="Vertical">
+
+        <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='Valor = {0:F2}' }" x:Name="label" 
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               FontSize="Large"
+               FontAttributes="Bold"/>
+
+        <Slider x:Name="slider"/>
+
     </StackLayout>
-    
+
 </ContentPage>
+
 
 
