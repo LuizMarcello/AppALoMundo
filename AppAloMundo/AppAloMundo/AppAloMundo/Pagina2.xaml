@@ -10,17 +10,28 @@
 
     <StackLayout Orientation="Vertical">
 
-        <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='Valor = {0:F2}' }" x:Name="label" 
-               HorizontalOptions="Center"
-               VerticalOptions="Center"
-               FontSize="Large"
-               FontAttributes="Bold"/>
+        <BoxView Color="Red" Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
+
+        <Label BindingContext="{x:Reference slider}"
+               
+            Text="{Binding Value, StringFormat='Valor = {0:F2}' }"
+               
+            Opacity="{Binding Value}"
+               
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            FontSize="Large"
+            FontAttributes="Bold"
+            x:Name="label" />
 
         <Slider x:Name="slider"/>
 
     </StackLayout>
 
 </ContentPage>
+               
+            
+               
 
 
 
