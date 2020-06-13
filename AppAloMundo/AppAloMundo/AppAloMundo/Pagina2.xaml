@@ -8,27 +8,32 @@
              Title="Macoratti.net"
              BackgroundColor="White">
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical" BindingContext="{x:Reference slider}" >
 
-        <BoxView Color="Red" Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
+        <BoxView  
+                Opacity="{Binding Value}"
+            
+                Color="Red"
+                />
 
-        <Label BindingContext="{x:Reference slider}"
+        <Label 
+              Text="{Binding Value, StringFormat='Valor = {0:F2}' }"
                
-            Text="{Binding Value, StringFormat='Valor = {0:F2}' }"
+              Opacity="{Binding Value}"
                
-            Opacity="{Binding Value}"
-               
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            FontSize="Large"
-            FontAttributes="Bold"
-            x:Name="label" />
+              HorizontalOptions="Center"
+              VerticalOptions="Center"
+              FontSize="Large"
+              FontAttributes="Bold"
+              x:Name="label" 
+              />
 
         <Slider x:Name="slider"/>
 
     </StackLayout>
 
 </ContentPage>
+               
                
             
                
